@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ToyJoy - Fun For Every Kid</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="topbar">🎉 Free shipping on orders over ₹999!</div>
+  <nav class="navbar">
+    <div class="logo">Toy<span>Joy</span> 🧸</div>
+    <div class="search"><input id="searchInput" placeholder="Search toys..." oninput="renderProducts()"><button>🔍</button></div>
+    <div class="nav-actions">
+      <button onclick="scrollToSection('products')">Shop</button>
+      <button onclick="showCart()">🛒 <b id="cartCount">0</b></button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">PLAY • LEARN • IMAGINE</p>
+    <h1>Big smiles start<br>with <span>great toys.</span></h1>
+    <p>Discover colourful, safe and exciting toys made for little adventures and big imaginations.</p>
+    <button class="primary" onclick="scrollToSection('products')">Shop Toys →</button>
+  </div>
+  <div class="hero-art">
+    <div class="sun"></div>
+    <div class="cloud c1">☁️</div><div class="cloud c2">☁️</div>
+    <div class="toy-ball">🎈</div>
+    <div class="teddy">🧸</div>
+    <div class="blocks">🟥 🟨 🟦</div>
+  </div>
+</section>
+
+<section class="categories">
+  <div class="section-head"><h2>Shop by category</h2><p>Something fun for every little explorer.</p></div>
+  <div class="cat-grid">
+    <div class="cat" onclick="setCategory('Plush')">🧸<b>Plush Toys</b><small>Cuddly friends</small></div>
+    <div class="cat" onclick="setCategory('Learning')">🧩<b>Learning</b><small>Smart & fun</small></div>
+    <div class="cat" onclick="setCategory('Vehicles')">🚗<b>Vehicles</b><small>Zoom & race</small></div>
+    <div class="cat" onclick="setCategory('Outdoor')">⚽<b>Outdoor</b><small>Play outside</small></div>
+  </div>
+</section>
+
+<section id="products" class="products-section">
+  <div class="section-head row"><div><h2>Popular toys</h2><p>Our little customers' favourites.</p></div>
+  <select id="categorySelect" onchange="renderProducts()"><option value="All">All toys</option><option>Plush</option><option>Learning</option><option>Vehicles</option><option>Outdoor</option></select></div>
+  <div id="productGrid" class="product-grid"></div>
+</section>
+
+<section class="banner">
+  <div><p class="eyebrow">WEEKEND FUN</p><h2>Up to 30% off<br>selected toys!</h2><p>Bring home more fun for less.</p><button class="primary" onclick="scrollToSection('products')">Explore deals</button></div>
+  <div class="banner-toys">🚂 🧸 🧩 🚀</div>
+</section>
+
+<footer>
+  <div class="footer-logo">Toy<span>Joy</span> 🧸</div>
+  <p>Made for play. Designed for smiles.</p>
+  <div class="footer-links"><span>About</span><span>Contact</span><span>Shipping</span><span>Privacy</span></div>
+  <small>© 2026 ToyJoy. All rights reserved.</small>
+</footer>
+
+<div id="cartModal" class="modal hidden">
+  <div class="cart-box"><button class="close" onclick="closeCart()">×</button><h2>Your Cart 🛒</h2><div id="cartItems"></div><div class="total">Total: ₹<span id="cartTotal">0</span></div><button class="primary full" onclick="checkout()">Checkout</button></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
